@@ -44,3 +44,9 @@ Responses to our most frequently asked questions can be found in our [FAQ](docs/
 The Terraform AWS Provider is the work of thousands of contributors. We appreciate your help!
 
 To contribute, please read the contribution guidelines: [Contributing to Terraform - AWS Provider](docs/contributing)
+
+
+## Paxos
+* [Installation](./PAXOS_INSTALL.md)
+
+
