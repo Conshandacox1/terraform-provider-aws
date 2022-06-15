@@ -3,14 +3,14 @@
 This repo uses a forked terraform provider.
 1. Clone https://github.com/paxosglobal/terraform-provider-aws
 2. Run `make` (function: `go install`)
-3. Create the local override: `mkdir -p ~/.terraform.d/plugins/paxos.com/paxos/aws/4.9.111/darwin_amd64`
+3. Create the local override: `mkdir -p ~/.terraform.d/plugins/registry.terraform.io/hashicorp/aws/4.9.111/darwin_amd64`
 4. Copy the new binary: 
 ```
 # if using asdf-installed golang
-cp ~/.asdf/installs/golang/1.16.2/packages/bin/terraform-provider-aws ~/.terraform.d/plugins/paxos.com/paxos/aws/4.9.111/darwin_amd64/
+cp ~/.asdf/installs/golang/1.16.2/packages/bin/terraform-provider-aws ~/.terraform.d/plugins/registry.terraform.io/hashicorp/aws/4.9.111/darwin_amd64/
 # -OR-
 # if you have GOPATH set [to something special]
-cp $GOPATH/bin/terraform-provider-aws ~/.terraform.d/plugins/paxos.com/paxos/aws/4.9.111/darwin_amd64/
+cp $GOPATH/bin/terraform-provider-aws ~/.terraform.d/plugins/registry.terraform.io/hashicorp/aws/4.9.111/darwin_amd64/
 ```
 
 
