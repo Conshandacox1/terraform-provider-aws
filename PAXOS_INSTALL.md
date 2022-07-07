@@ -35,23 +35,28 @@ cp $GOPATH/bin/terraform-provider-aws ~/.terraform.d/plugins/registry.terraform.
   + [^How to override a provider with a local version]
     ```sh
     # @File: ~/.terraformrc
+    
+    # define path to downloaded / cached plugins (default)
+    plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"
+    
     provider_installation {
       # Use /home/developer/tmp/terraform-null as an overridden package directory
       # for the hashicorp/null provider. This disables the version and checksum
       # verifications for this provider and forces Terraform to look for the
       # null provider plugin in the given directory.
       filesystem_mirror {
-        path    = "/Users/mnichols/.terraform.d/plugins"
-        include = ["hashicorp/aws"]
+        path    = "$HOME/.terraform.d/plugins"
+        include = ["hashicorp/aws","hashicorp/*"]
       }
 
       #dev_overrides {
-      #  "hashicorp/aws" = "/Users/mnichols/go/bin/terraform-provider-aws"
+      #  "hashicorp/aws" = "$HOME/go/bin/terraform-provider-aws"
       #}
-    
+
+      # NOTE: If you omit `direct{}` block, Terraform will _only_ search the dev_overrides block
+      #       and so no other providers will be available.
       # For all other providers, install them directly from their origin provider
-      # registries as normal. If you omit this, Terraform will _only_ use
-      # the dev_overrides block, and so no other providers will be available.
+      # registries as normal.
       direct {
         exclude = ["registry.terraform.io/hashicorp/aws"]
       }
